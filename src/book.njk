@@ -1,0 +1,53 @@
+---
+pagination:
+  data: books
+  size: 1
+  alias: bookKey
+permalink: "{{ bookKey }}/index.html"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ books[bookKey].title }} - Chapter Notes</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <h1 class="site-title">INFO 498 SU 25 - Textbook Review Notes</h1>
+    <div class="book-selector">
+      {% for key, book in books %}
+        <a href="/{{ key }}/" class="book-cover-link {% if key == bookKey %}selected{% endif %}">
+          <img src="/images/{{ book.slug }}-cover.jpg" alt="{{ book.title }} Cover" class="book-cover">
+        </a>
+      {% endfor %}
+    </div>
+
+    <h1>{{ books[bookKey].title }} – Chapter Notes</h1>
+    <p class="note">Chapter notes will be accessible after the date of the assigned reading for the class, for the purpose of review.
+    <br>These notes may be imperfect - please refer to the book as the most reliable source.</p>
+
+    {% set visibleChapters = collections[bookKey] | where("visible", true) %}
+
+    {% for chapterData in visibleChapters | sort(false, false, 'data.chapter') %}
+      {% include "chapter-card.njk" %}
+    {% endfor %}
+  </main>
+  <script>
+    const details = document.querySelectorAll('.chapter-card');
+
+    details.forEach(targetDetail => {
+      targetDetail.addEventListener('toggle', event => {
+        if (targetDetail.open) {
+          details.forEach(detail => {
+            if (detail !== targetDetail) {
+              detail.open = false;
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

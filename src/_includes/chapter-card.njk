@@ -1,0 +1,30 @@
+<details class="chapter-card">
+  <summary>
+    <span class="ch-num">Chapter {{ chapterData.data.chapter }}.</span>
+    <span class="ch-title">{{ chapterData.data.title }}</span>
+  </summary>
+
+  <div class="ch-body">
+    <div class="ch-body-grid">
+      <div class="ch-summary">
+        <div class="summary">{{ chapterData.templateContent | safe }}</div>
+        {% if chapterData.data.takeaways %}
+        <h3>Why it Matters</h3>
+        <blockquote class="takeaways">{{ chapterData.data.takeaways }}</blockquote>
+        {% endif %}
+      </div>
+
+      {% if chapterData.data.terms and chapterData.data.terms.length %}
+      <div class="ch-terms">
+        <h3>Bonus Definitions</h3>
+        <dl class="terms">
+          {% for t in chapterData.data.terms %}
+          <dt>{{ t.term }}</dt>
+          <dd>{{ t.def }}</dd>
+          {% endfor %}
+        </dl>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</details>
