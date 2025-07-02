@@ -4,7 +4,8 @@ pagination:
   size: 1
   alias: bookKey
 layout: "base.njk"
-permalink: "{{ bookKey }}/index.html"
+eleventyComputed:
+  permalink: "{{ '/' ~ bookKey ~ '/' | url }}"
 title: "{{ books[bookKey].title }} - Chapter Notes"
 ---
 
