@@ -39,10 +39,10 @@ module.exports = function(eleventyConfig) {
   // Tell Eleventy to use the `src` directory for everything
   return {
     dir: {
-      input: "src/pages",
+      input: "src",
       output: "_site",
-      includes: "../_includes",
-      data: "../_data"
+      includes: "_includes",
+      data: "_data"
     },
     pathPrefix: "/textbook-notes-website/"
   };
