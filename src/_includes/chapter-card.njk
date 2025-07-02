@@ -1,10 +1,13 @@
-<details class="chapter-card">
-  <summary>
-    <span class="ch-num">Chapter {{ chapterData.data.chapter }}.</span>
-    <span class="ch-title">{{ chapterData.data.title }}</span>
-  </summary>
+<div class="chapter-card">
+  <div class="chapter-header">
+    <span>
+      <span class="ch-num">Chapter {{ chapterData.data.chapter }}:</span>
+      <span class="ch-title">{{ chapterData.data.title }}</span>
+    </span>
+    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </div>
 
-  <div class="ch-body">
+  <div class="chapter-body">
     <div class="ch-body-grid">
       <div class="ch-summary">
         <div class="summary">{{ chapterData.templateContent | safe }}</div>
@@ -16,7 +19,7 @@
 
       {% if chapterData.data.terms and chapterData.data.terms.length %}
       <div class="ch-terms">
-        <h3>Bonus Definitions</h3>
+        <h3>Extra definition to help you understand the text</h3>
         <dl class="terms">
           {% for t in chapterData.data.terms %}
           <dt>{{ t.term }}</dt>
@@ -27,4 +30,4 @@
       {% endif %}
     </div>
   </div>
-</details>
+</div>

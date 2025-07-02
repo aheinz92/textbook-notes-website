@@ -5,15 +5,16 @@ pagination:
   alias: bookKey
 layout: "base.njk"
 permalink: "{{ bookKey }}/index.html"
-title: "UW INFO Entrepreneurship: Textbook Notes"
+title: "{{ books[bookKey].title }} - Chapter Notes"
 ---
 
 <div id="chapters-container">
+
   <h1>{{ books[bookKey].title }}</h1>
 
-  {% set visibleChapters = collections[bookKey] | where("visible", true) %}
+  {% set chapters = getChapters(bookKey) %}
   
-  {% for chapterData in visibleChapters | sort(false, false, 'data.chapter') %}
+  {% for chapterData in chapters %}
     {% include "chapter-card.njk" %}
   {% endfor %}
 </div>

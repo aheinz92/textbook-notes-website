@@ -1,2 +1,4 @@
-# Don't treat chapter markdown files as individual pages.
-# The collections in .eleventy.js will still find them.
+src/index.njk
+src/book.njk
+src/lost-and-founder/
+src/venture-deals/
