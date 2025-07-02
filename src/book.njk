@@ -10,11 +10,12 @@ eleventyComputed:
 ---
 
 <div id="chapters-container">
+  
   <h1>{{ books[bookKey].title }}</h1>
 
   {% set chapters = getChapters(bookKey) %}
   
-  {% for chapterData in chapters %}
+  {% for chapterData in chapters | where("visible", true) %}
     {% include "chapter-card.njk" %}
   {% endfor %}
 </div>
