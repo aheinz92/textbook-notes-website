@@ -3,7 +3,7 @@ name: Build and Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Or master, depending on your default branch
+      - main
 
 jobs:
   build-and-deploy:
