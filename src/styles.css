@@ -4,7 +4,7 @@
   --primary-bg: #FFFFFF;
   --text-color: #1a1a1a;
   --primary-accent: #005b96;
-  --secondary-accent: #b3cde0;
+  --secondary-accent: #7aaed3;
   --border-color: #e0e0e0;
 }
 
@@ -26,6 +26,7 @@ h1, h2, h3 {
 h1 {
   font-style: italic;
   text-align: center;
+  margin: 0.25rem auto;
 }
 
 .site-title {
@@ -134,21 +135,6 @@ h1 {
   z-index: 1;
 }
 
-@media (max-width: 600px) {
-  .ch-body-grid {
-    grid-template-columns: 1fr;
-  }
-  .book-selector {
-    gap: 2rem;
-  }
-  .book-cover {
-    height: 200px;
-  }
-  body {
-    padding: 0 1rem;
-  }
-}
-
 .book-cover-link:hover .book-cover {
   transform: scale(1.05);
 }
@@ -212,5 +198,101 @@ footer {
   }
   50% {
     transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+/* Book metadata styling */
+.book-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background-color: #f9f9f9;
+  border-left: 5px solid var(--primary-accent);
+  font-size: 0.85em;
+}
+
+.book-info-syllabus {
+  flex: 1; /* 50% of the width */
+  padding-right: 15px;
+}
+
+.book-link-line {
+  margin: 0 0 0.5em 0;
+  font-family: 'Merriweather', serif;
+  font-size: 1.1em;
+}
+
+.book-action-link {
+  font-style: italic;
+  color: var(--secondary-accent);
+  text-decoration: underline;
+}
+
+.book-action-link:hover {
+  color: var(--primary-accent);
+  text-decoration: none;
+}
+
+.syllabus-description {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.book-meta-citation {
+  flex: 1; /* 50% of the width */
+  border-left: 1px solid var(--border-color);
+  padding-left: 15px;
+}
+
+.apa-citation {
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.apa-title,
+.apa-edition {
+  display: inline; /* Ensures they don't break the line */
+}
+
+.apa-citation strong {
+  color: #333;
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .book-meta {
+    flex-direction: column;
+    align-items: stretch;
+    /* On mobile, remove the side border for a cleaner stack */
+    border-left: none;
+    padding: 15px;
+  }
+
+  .book-info-syllabus {
+    padding-right: 0;
+  }
+
+  .book-meta-citation {
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+    padding: 15px 0 0 0;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ch-body-grid {
+    grid-template-columns: 1fr;
+  }
+  .book-selector {
+    gap: 2rem;
+  }
+  .book-cover {
+    height: 200px;
+  }
+  body {
+    padding: 0 1rem;
   }
 }

@@ -1,10 +1,27 @@
 {
   "lost-and-founder": {
     "slug": "lost-and-founder",
-    "title": "Lost and Founder"
+    "title_short": "Lost and Founder",
+    "title_long": "Lost and Founder: A Painfully Honest Field Guide to the Startup World",
+    "author": "Rand Fishkin",
+    "publication_year": "2018",
+    "publisher": "Penguin Publishing Group",
+    "isbn": "9780593853962",
+    "url_amazon": "https://www.amazon.com/dp/0593853962",
+    "url": "https://sparktoro.com/book/lost-and-founder",
+    "description_syllabus": "Lost and Founder is available in print and ebook editions, and should cost less than $10 for the Kindle edition"
   },
   "venture-deals": {
     "slug": "venture-deals",
-    "title": "Venture Deals"
+    "title_short": "Venture Deals",
+    "title_long": "Venture Deals: Be Smarter Than Your Lawyer and Venture Capitalist",
+    "edition": "4th ed.",
+    "author": "Brad Feld, Jason Mendelson",
+    "publication_year": "2019",
+    "publisher": "Wiley",
+    "isbn": "9781119594826",
+    "url_amazon": "https://www.amazon.com/dp/1119594820",
+    "url": "https://www.feld.com/archives/2019/08/venture-deals-4th-edition-is-out.html",
+    "description_syllabus": "You should be able to read Venture Deals online at no charge by going to the <a href=\"https://guides.lib.uw.edu/az.php\" target=\"_blank\" rel=\"noopener noreferrer\">UW Libraries databases list</a> and choosing O'Reilly"
   }
 }

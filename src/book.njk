@@ -6,12 +6,27 @@ pagination:
 layout: "base.njk"
 eleventyComputed:
   permalink: "/{{ bookKey }}/"
-  title: "{{ books[bookKey].title }} - Chapter Notes"
+  title: "{{ books[bookKey].title_short }} - Chapter Notes"
 ---
 
 <div id="chapters-container">
   
-  <h1>{{ books[bookKey].title }}</h1>
+  <h1>{{ books[bookKey].title_short }}</h1>
+
+  <div class="book-meta">
+    <div class="book-info-syllabus">
+      <p class="book-link-line">
+        <a href="{{ books[bookKey].url }}" target="_blank" rel="noopener noreferrer" class="book-action-link">Link to the book</a>
+      </p>
+      <p class="syllabus-description">{{ books[bookKey].description_syllabus | safe }}</p>
+    </div>
+    <div class="book-meta-citation">
+      <p class="apa-citation">
+        <strong>APA Citation:</strong>
+        {{ books[bookKey].author }}. ({{ books[bookKey].publication_year }}). <span class="apa-title"><em>{{ books[bookKey].title_long }}</em></span>{% if books[bookKey].edition %} <span class="apa-edition">({{ books[bookKey].edition }})</span>{% endif %}. {{ books[bookKey].publisher }}.
+      </p>
+    </div>
+  </div>
 
   {% set chapters = getChapters(bookKey) %}
   
