@@ -8,7 +8,7 @@
   </div>
 
   <div class="chapter-body">
-    <div class="ch-body-grid">
+    <div class="ch-body-grid{% if not chapterData.data.terms or not chapterData.data.terms.length %} single-column{% endif %}">
       <div class="ch-summary">
         <div class="summary">{{ chapterData.templateContent | safe }}</div>
         {% if chapterData.data.takeaways %}
