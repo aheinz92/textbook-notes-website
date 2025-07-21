@@ -8,15 +8,7 @@
   </div>
 
   <div class="chapter-body">
-    <div class="ch-body-grid{% if not chapterData.data.terms or not chapterData.data.terms.length %} single-column{% endif %}">
-      <div class="ch-summary">
-        <div class="summary">{{ chapterData.templateContent | safe }}</div>
-        {% if chapterData.data.takeaways %}
-        <h3>Why it Matters</h3>
-        <blockquote class="takeaways">{{ chapterData.data.takeaways }}</blockquote>
-        {% endif %}
-      </div>
-
+    <div class="ch-body-grid">
       {% if chapterData.data.terms and chapterData.data.terms.length %}
       <div class="ch-terms">
         <h3>Definitions you might find helpful</h3>
@@ -28,6 +20,13 @@
         </dl>
       </div>
       {% endif %}
+      <div class="ch-summary">
+        <div class="summary">{{ chapterData.templateContent | safe }}</div>
+        {% if chapterData.data.takeaways %}
+        <h3>Why it Matters</h3>
+        <blockquote class="takeaways">{{ chapterData.data.takeaways }}</blockquote>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>

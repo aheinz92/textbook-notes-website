@@ -88,14 +88,18 @@ h1 {
 }
 
 .ch-body-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
   padding: 0rem 1.5rem 1.5rem 1.5rem;
+  overflow: auto; /* Clearfix for the floated element */
 }
 
 .ch-body-grid.single-column {
-  grid-template-columns: 1fr;
+  /* This class is no longer needed with the float approach, but we'll keep it for now */
+}
+
+.ch-terms {
+  float: right;
+  width: 33%;
+  margin-left: 2rem;
 }
 
 .terms dt {
@@ -287,9 +291,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .ch-body-grid {
-    grid-template-columns: 1fr;
-  }
   .book-selector {
     gap: 2rem;
   }
@@ -298,5 +299,13 @@ footer {
   }
   body {
     padding: 0 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .ch-terms {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 1.5rem; /* Add space between summary and definitions */
   }
 }
