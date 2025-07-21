@@ -23,7 +23,7 @@ eleventyComputed:
     <div class="book-meta-citation">
       <p class="apa-citation">
         <strong>APA Citation:</strong>
-        {{ books[bookKey].author }}. ({{ books[bookKey].publication_year }}). <span class="apa-title"><em>{{ books[bookKey].title_long }}</em></span>{% if books[bookKey].edition %} <span class="apa-edition">({{ books[bookKey].edition }})</span>{% endif %}. {{ books[bookKey].publisher }}.
+        {{ books[bookKey].author_apa }} ({{ books[bookKey].publication_year }}). <span class="apa-title"><em>{{ books[bookKey].title_long }}</em></span>{% if books[bookKey].edition %} <span class="apa-edition">({{ books[bookKey].edition }})</span>{% endif %}. {{ books[bookKey].publisher }}.
       </p>
     </div>
   </div>
