@@ -4,10 +4,12 @@ const path = require("path");
 const matter = require("gray-matter");
 const md = require("markdown-it")();
 
+const isProduction = process.env.NODE_ENV === "production";
+
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("styles.css");
-  eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("main.js");
+  eleventyConfig.addPassthroughCopy({ "src/styles.css": "styles.css" });
+  eleventyConfig.addPassthroughCopy({ "src/images": "images" });
+  eleventyConfig.addPassthroughCopy({ "src/main.js": "main.js" });
 
   // Add a "where" filter for arrays. This version is more robust.
   eleventyConfig.addFilter("where", (array, key, value) => {
@@ -44,6 +46,6 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
-    pathPrefix: "/textbook-notes-website/"
+    pathPrefix: isProduction ? "/textbook-notes-website/" : "/",
   };
 };
