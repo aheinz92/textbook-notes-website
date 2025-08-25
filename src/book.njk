@@ -28,6 +28,10 @@ eleventyComputed:
     </div>
   </div>
 
+  <div class="search-wrapper">
+    <input type="search" id="chapter-search" placeholder="Search for terms (ex. Participation, Earn-Out, TAGFEE, etc.) to see it highlighted in the chapters" aria-label="Search chapters">
+  </div>
+
   {% set chapters = getChapters(bookKey) %}
   
   {% for chapterData in chapters | where("visible", true) %}

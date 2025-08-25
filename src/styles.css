@@ -309,3 +309,64 @@ footer {
     margin-top: 1.5rem; /* Add space between summary and definitions */
   }
 }
+/* ==========================================================================
+   Search Filter Styles
+   ========================================================================== */
+
+.search-wrapper {
+  margin-bottom: 2rem;
+}
+
+#chapter-search {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#chapter-search:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+mark {
+  background-color: #fff3cd;
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+}
+/* ==========================================================================
+   Search Filter Styles
+   ========================================================================== */
+
+.search-wrapper {
+  margin-bottom: 2rem;
+}
+
+#chapter-search {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#chapter-search:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+#chapter-search::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+mark {
+  background-color: #fff3cd;
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+}
