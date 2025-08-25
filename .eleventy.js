@@ -5,9 +5,9 @@ const matter = require("gray-matter");
 const md = require("markdown-it")();
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "src/styles.css": "styles.css" });
-  eleventyConfig.addPassthroughCopy({ "src/images": "images" });
-  eleventyConfig.addPassthroughCopy({ "src/main.js": "main.js" });
+  eleventyConfig.addPassthroughCopy("styles.css");
+  eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("main.js");
 
   // Add a "where" filter for arrays. This version is more robust.
   eleventyConfig.addFilter("where", (array, key, value) => {
