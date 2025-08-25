@@ -4,8 +4,6 @@ const path = require("path");
 const matter = require("gray-matter");
 const md = require("markdown-it")();
 
-const isProduction = process.env.NODE_ENV === "production";
-
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/styles.css": "styles.css" });
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });
@@ -46,6 +44,6 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
-    pathPrefix: isProduction ? "/textbook-notes-website/" : "/",
+    pathPrefix: "/textbook-notes-website/",
   };
 };
