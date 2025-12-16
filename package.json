@@ -1,14 +1,22 @@
 {
   "name": "textbook-notes-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "Textbook notes and reading companions for INFO498",
   "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "eleventy",
+    "textbook",
+    "notes",
+    "info498"
+  ],
+  "author": "INFO498 Teaching Staff",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
